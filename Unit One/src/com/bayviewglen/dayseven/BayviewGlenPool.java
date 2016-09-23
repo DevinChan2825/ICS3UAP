@@ -62,14 +62,17 @@ public static void main(String[] args) {
 		System.out.println("The total surface area is " + totalSurfaceArea + "m^2.");
 		
 		
-		///// Prices
+		/////Prices////////////
 		
 		double linerOnePrice = FIRST_lINER * totalSurfaceArea;
 		System.out.println("The price of the first liner is $" + linerOnePrice + ".");
 		
-				
+		double linerTwoPrice = SECOND_lINER * totalSurfaceArea;
+		System.out.println("The price of the second liner is $" + linerTwoPrice + ".");
 		
-		
+		double linerThreePrice = THIRD_lINER * totalSurfaceArea;
+		System.out.println("The price of the third liner is $" + linerThreePrice + ".");
+	
 		
 	}
 
