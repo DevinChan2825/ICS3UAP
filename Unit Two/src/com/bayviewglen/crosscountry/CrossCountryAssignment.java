@@ -266,7 +266,7 @@ public class CrossCountryAssignment {
 				
 				//Table for Runner 5
 				
-					System.out.println("Runner Four Summary: ");
+					System.out.println("Runner Five Summary: ");
 					System.out.println("SplitOne: " + FinalSplitRunnerFive);
 					System.out.println("SplitTwo: " + FinalSplitTwoRunnerFive);
 					System.out.println("SplitThree: " + FinalSplitThreeRunnerFive);
