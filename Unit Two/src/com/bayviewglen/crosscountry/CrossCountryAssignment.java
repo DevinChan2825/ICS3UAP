@@ -109,181 +109,182 @@ public class CrossCountryAssignment {
 	
 	//Table for Runner 2
 	
-		System.out.println("Runner Two Summary: ");
-		System.out.println("SplitOne: " + FinalSplitRunnerTwo);
-		System.out.println("SplitTwo: " + FinalSplitTwoRunnerTwo);
-		System.out.println("SplitThree: " + FinalSplitThreeRunnerTwo);
-		System.out.println("Total 5km run: " + TotalRunnerTwo);
-		System.out.println();
+	System.out.println("Runner Two Summary: ");
+	System.out.println("SplitOne: " + FinalSplitRunnerTwo);
+	System.out.println("SplitTwo: " + FinalSplitTwoRunnerTwo);
+	System.out.println("SplitThree: " + FinalSplitThreeRunnerTwo);
+	System.out.println("Total 5km run: " + TotalRunnerTwo);
+	System.out.println();
 	
 	
-		//Runner Three Mile One
-		System.out.print(" Please enter your first and last name: ");
-		String name3 = keyboard.nextLine();
-		System.out.print(name3 + " Please enter your mile one time (mm:ss.sss)");
-		String MileOneRunnerThree = keyboard.nextLine();
-		int MinutesRunnerThree = Integer.parseInt(MileOneRunnerThree.substring(0, MileOneRunnerThree.indexOf(':')));
-		int MinutesToSecondsRunnerThree = MinutesRunnerThree * SEC_TO_MIN;
-		double SecondsRunnerThree  = Double.parseDouble(MileOneRunnerThree.substring(MileOneRunnerThree.indexOf(':') +1));
-		double TotalSecondsRunnerThree = SecondsRunnerThree + MinutesToSecondsRunnerThree;
+	//Runner Three Mile One
+	System.out.print(" Please enter your first and last name: ");
+	String name3 = keyboard.nextLine();
+	System.out.print(name3 + " Please enter your mile one time (mm:ss.sss)");
+	String MileOneRunnerThree = keyboard.nextLine();
+	int MinutesRunnerThree = Integer.parseInt(MileOneRunnerThree.substring(0, MileOneRunnerThree.indexOf(':')));
+	int MinutesToSecondsRunnerThree = MinutesRunnerThree * SEC_TO_MIN;
+	double SecondsRunnerThree  = Double.parseDouble(MileOneRunnerThree.substring(MileOneRunnerThree.indexOf(':') +1));
+	double TotalSecondsRunnerThree = SecondsRunnerThree + MinutesToSecondsRunnerThree;
 		
-		//Runner Three Mile Two
-		System.out.print(name3 + " Please enter your mile one time (mm:ss.sss)");
-		String MileTwoRunnerThree = keyboard.nextLine();
-		int MinutesTwoRunnerThree = Integer.parseInt(MileTwoRunnerThree.substring(0, MileTwoRunnerThree.indexOf(':')));
-		int MinutesTwoToSecondsRunnerThree = MinutesTwoRunnerThree * SEC_TO_MIN;
-		double SecondsTwoRunnerThree  = Double.parseDouble(MileTwoRunnerThree.substring(MileTwoRunnerThree.indexOf(':') +1));
-		double TotalSecondsTwoRunnerThree = SecondsTwoRunnerThree + MinutesTwoToSecondsRunnerThree;
+	//Runner Three Mile Two
+	System.out.print(name3 + " Please enter your mile one time (mm:ss.sss)");
+	String MileTwoRunnerThree = keyboard.nextLine();
+	int MinutesTwoRunnerThree = Integer.parseInt(MileTwoRunnerThree.substring(0, MileTwoRunnerThree.indexOf(':')));
+	int MinutesTwoToSecondsRunnerThree = MinutesTwoRunnerThree * SEC_TO_MIN;
+	double SecondsTwoRunnerThree  = Double.parseDouble(MileTwoRunnerThree.substring(MileTwoRunnerThree.indexOf(':') +1));
+	double TotalSecondsTwoRunnerThree = SecondsTwoRunnerThree + MinutesTwoToSecondsRunnerThree;
 		
-		//Runner Three Total 5km run
-		System.out.print(name3 + " Please enter your mile one time (mm:ss.sss)");
-		String TotalRunnerThree = keyboard.nextLine();
-		int MinutesThreeRunnerThree = Integer.parseInt(TotalRunnerThree.substring(0, TotalRunnerThree.indexOf(':')));
-		int MinutesThreeToSecondsRunnerThree = MinutesThreeRunnerThree * SEC_TO_MIN;
-		double SecondsThreeRunnerThree  = Double.parseDouble(TotalRunnerThree.substring(TotalRunnerThree.indexOf(':') +1));
-		double TotalSecondsThreeRunnerThree = SecondsThreeRunnerThree + MinutesThreeToSecondsRunnerThree;
-		
-		//Finding Split Time
-		double SplitOneRunnerThree = TotalSecondsRunnerThree;
-		int MinutesLeftOneRunnerThree = (int) SplitOneRunnerThree / SEC_TO_MIN;
-		double SecondsLeftOneRunnerThree = SplitOneRunnerThree % SEC_TO_MIN;
-		String FinalSplitRunnerThree = MinutesLeftOneRunnerThree + ":" + formatter.format(SecondsLeftOneRunnerThree);
-		
-		double SplitTwoRunnerThree = TotalSecondsTwoRunnerThree - TotalSecondsRunnerThree;
-		int MinutesLeftTwoRunnerThree = (int) SplitTwoRunnerThree / SEC_TO_MIN;
-		double SecondsLeftTwoRunnerThree = SplitTwoRunnerThree % SEC_TO_MIN;
-		String FinalSplitTwoRunnerThree = MinutesLeftTwoRunnerThree + ":" + formatter.format(SecondsLeftTwoRunnerThree);
-		
-		double SplitThreeRunnerThree = TotalSecondsThreeRunnerThree - TotalSecondsTwoRunnerThree;
-		int MinutesLeftThreeRunnerThree = (int) SplitThreeRunnerThree / SEC_TO_MIN;
-		double SecondsLeftThreeRunnerThree = SplitThreeRunnerThree % SEC_TO_MIN;
-		String FinalSplitThreeRunnerThree = MinutesLeftThreeRunnerThree + ":" + formatter.format(SecondsLeftThreeRunnerThree);
-		System.out.println();
-		
-		//Table for Runner 3
-		
-			System.out.println("Runner Three Summary: ");
-			System.out.println("SplitOne: " + FinalSplitRunnerThree);
-			System.out.println("SplitTwo: " + FinalSplitTwoRunnerThree);
-			System.out.println("SplitThree: " + FinalSplitThreeRunnerThree);
-			System.out.println("Total 5km run: " + TotalRunnerThree);
-			System.out.println();
+	//Runner Three Total 5km run
+	System.out.print(name3 + " Please enter your mile one time (mm:ss.sss)");
+	String TotalRunnerThree = keyboard.nextLine();
+	int MinutesThreeRunnerThree = Integer.parseInt(TotalRunnerThree.substring(0, TotalRunnerThree.indexOf(':')));
+	int MinutesThreeToSecondsRunnerThree = MinutesThreeRunnerThree * SEC_TO_MIN;
+	double SecondsThreeRunnerThree  = Double.parseDouble(TotalRunnerThree.substring(TotalRunnerThree.indexOf(':') +1));
+	double TotalSecondsThreeRunnerThree = SecondsThreeRunnerThree + MinutesThreeToSecondsRunnerThree;
 	
-			//Runner Four Mile One
-			System.out.print(" Please enter your first and last name: ");
-			String name4 = keyboard.nextLine();
-			System.out.print(name4 + " Please enter your mile one time (mm:ss.sss)");
-			String MileOneRunnerFour = keyboard.nextLine();
-			int MinutesRunnerFour = Integer.parseInt(MileOneRunnerFour.substring(0, MileOneRunnerFour.indexOf(':')));
-			int MinutesToSecondsRunnerFour = MinutesRunnerFour * SEC_TO_MIN;
-			double SecondsRunnerFour = Double.parseDouble(MileOneRunnerFour.substring(MileOneRunnerFour.indexOf(':') +1));
-			double TotalSecondsRunnerFour = SecondsRunnerFour + MinutesToSecondsRunnerFour;
+	//Finding Split Time
+	double SplitOneRunnerThree = TotalSecondsRunnerThree;
+	int MinutesLeftOneRunnerThree = (int) SplitOneRunnerThree / SEC_TO_MIN;
+	double SecondsLeftOneRunnerThree = SplitOneRunnerThree % SEC_TO_MIN;
+	String FinalSplitRunnerThree = MinutesLeftOneRunnerThree + ":" + formatter.format(SecondsLeftOneRunnerThree);
+	
+	double SplitTwoRunnerThree = TotalSecondsTwoRunnerThree - TotalSecondsRunnerThree;
+	int MinutesLeftTwoRunnerThree = (int) SplitTwoRunnerThree / SEC_TO_MIN;
+	double SecondsLeftTwoRunnerThree = SplitTwoRunnerThree % SEC_TO_MIN;
+	String FinalSplitTwoRunnerThree = MinutesLeftTwoRunnerThree + ":" + formatter.format(SecondsLeftTwoRunnerThree);
+		
+	double SplitThreeRunnerThree = TotalSecondsThreeRunnerThree - TotalSecondsTwoRunnerThree;
+	int MinutesLeftThreeRunnerThree = (int) SplitThreeRunnerThree / SEC_TO_MIN;
+	double SecondsLeftThreeRunnerThree = SplitThreeRunnerThree % SEC_TO_MIN;
+	String FinalSplitThreeRunnerThree = MinutesLeftThreeRunnerThree + ":" + formatter.format(SecondsLeftThreeRunnerThree);
+	System.out.println();
+		
+	//Table for Runner 3
+		
+	System.out.println("Runner Three Summary: ");
+	System.out.println("SplitOne: " + FinalSplitRunnerThree);
+	System.out.println("SplitTwo: " + FinalSplitTwoRunnerThree);
+	System.out.println("SplitThree: " + FinalSplitThreeRunnerThree);
+	System.out.println("Total 5km run: " + TotalRunnerThree);
+	System.out.println();
+	
+	//Runner Four Mile One
+	System.out.print(" Please enter your first and last name: ");
+	String name4 = keyboard.nextLine();
+	System.out.print(name4 + " Please enter your mile one time (mm:ss.sss)");
+	String MileOneRunnerFour = keyboard.nextLine();
+	int MinutesRunnerFour = Integer.parseInt(MileOneRunnerFour.substring(0, MileOneRunnerFour.indexOf(':')));
+	int MinutesToSecondsRunnerFour = MinutesRunnerFour * SEC_TO_MIN;
+	double SecondsRunnerFour = Double.parseDouble(MileOneRunnerFour.substring(MileOneRunnerFour.indexOf(':') +1));
+	double TotalSecondsRunnerFour = SecondsRunnerFour + MinutesToSecondsRunnerFour;
 			
-			//Runner Four Mile Two
-			System.out.print(name4 + " Please enter your mile one time (mm:ss.sss)");
-			String MileTwoRunnerFour = keyboard.nextLine();
-			int MinutesTwoRunnerFour = Integer.parseInt(MileTwoRunnerFour.substring(0, MileTwoRunnerFour.indexOf(':')));
-			int MinutesTwoToSecondsRunnerFour = MinutesTwoRunnerFour * SEC_TO_MIN;
-			double SecondsTwoRunnerFour  = Double.parseDouble(MileTwoRunnerFour.substring(MileTwoRunnerFour.indexOf(':') +1));
-			double TotalSecondsTwoRunnerFour = SecondsTwoRunnerFour + MinutesTwoToSecondsRunnerFour;
+	//Runner Four Mile Two
+	System.out.print(name4 + " Please enter your mile one time (mm:ss.sss)");
+	String MileTwoRunnerFour = keyboard.nextLine();
+	int MinutesTwoRunnerFour = Integer.parseInt(MileTwoRunnerFour.substring(0, MileTwoRunnerFour.indexOf(':')));
+	int MinutesTwoToSecondsRunnerFour = MinutesTwoRunnerFour * SEC_TO_MIN;
+	double SecondsTwoRunnerFour  = Double.parseDouble(MileTwoRunnerFour.substring(MileTwoRunnerFour.indexOf(':') +1));
+	double TotalSecondsTwoRunnerFour = SecondsTwoRunnerFour + MinutesTwoToSecondsRunnerFour;
 			
-			//Runner Four Total 5km run
-			System.out.print(name4 + " Please enter your mile one time (mm:ss.sss)");
-			String TotalRunnerFour = keyboard.nextLine();
-			int MinutesThreeRunnerFour = Integer.parseInt(TotalRunnerFour.substring(0, TotalRunnerFour.indexOf(':')));
-			int MinutesThreeToSecondsRunnerFour = MinutesThreeRunnerFour * SEC_TO_MIN;
-			double SecondsThreeRunnerFour  = Double.parseDouble(TotalRunnerFour.substring(TotalRunnerFour.indexOf(':') +1));
-			double TotalSecondsThreeRunnerFour = SecondsThreeRunnerFour + MinutesThreeToSecondsRunnerFour;
+	//Runner Four Total 5km run
+	System.out.print(name4 + " Please enter your mile one time (mm:ss.sss)");
+	String TotalRunnerFour = keyboard.nextLine();
+	int MinutesThreeRunnerFour = Integer.parseInt(TotalRunnerFour.substring(0, TotalRunnerFour.indexOf(':')));
+	int MinutesThreeToSecondsRunnerFour = MinutesThreeRunnerFour * SEC_TO_MIN;
+	double SecondsThreeRunnerFour  = Double.parseDouble(TotalRunnerFour.substring(TotalRunnerFour.indexOf(':') +1));
+	double TotalSecondsThreeRunnerFour = SecondsThreeRunnerFour + MinutesThreeToSecondsRunnerFour;
 			
-			//Finding Split Time
-			double SplitOneRunnerFour = TotalSecondsRunnerFour;
-			int MinutesLeftOneRunnerFour = (int) SplitOneRunnerFour / SEC_TO_MIN;
-			double SecondsLeftOneRunnerFour = SplitOneRunnerFour % SEC_TO_MIN;
-			String FinalSplitRunnerFour = MinutesLeftOneRunnerFour + ":" + formatter.format(SecondsLeftOneRunnerFour);
+	//Finding Split Time
+	double SplitOneRunnerFour = TotalSecondsRunnerFour;
+	int MinutesLeftOneRunnerFour = (int) SplitOneRunnerFour / SEC_TO_MIN;
+	double SecondsLeftOneRunnerFour = SplitOneRunnerFour % SEC_TO_MIN;
+	String FinalSplitRunnerFour = MinutesLeftOneRunnerFour + ":" + formatter.format(SecondsLeftOneRunnerFour);
 			
-			double SplitTwoRunnerFour = TotalSecondsTwoRunnerFour - TotalSecondsRunnerFour;
-			int MinutesLeftTwoRunnerFour = (int) SplitTwoRunnerFour / SEC_TO_MIN;
-			double SecondsLeftTwoRunnerFour = SplitTwoRunnerFour % SEC_TO_MIN;
-			String FinalSplitTwoRunnerFour = MinutesLeftTwoRunnerFour + ":" + formatter.format(SecondsLeftTwoRunnerFour);
+	double SplitTwoRunnerFour = TotalSecondsTwoRunnerFour - TotalSecondsRunnerFour;
+	int MinutesLeftTwoRunnerFour = (int) SplitTwoRunnerFour / SEC_TO_MIN;
+	double SecondsLeftTwoRunnerFour = SplitTwoRunnerFour % SEC_TO_MIN;
+	String FinalSplitTwoRunnerFour = MinutesLeftTwoRunnerFour + ":" + formatter.format(SecondsLeftTwoRunnerFour);
 			
-			double SplitThreeRunnerFour = TotalSecondsThreeRunnerFour - TotalSecondsTwoRunnerFour;
-			int MinutesLeftThreeRunnerFour = (int) SplitThreeRunnerFour / SEC_TO_MIN;
-			double SecondsLeftThreeRunnerFour = SplitThreeRunnerFour % SEC_TO_MIN;
-			String FinalSplitThreeRunnerFour = MinutesLeftThreeRunnerFour + ":" + formatter.format(SecondsLeftThreeRunnerFour);
-			System.out.println();
+	double SplitThreeRunnerFour = TotalSecondsThreeRunnerFour - TotalSecondsTwoRunnerFour;
+	int MinutesLeftThreeRunnerFour = (int) SplitThreeRunnerFour / SEC_TO_MIN;
+	double SecondsLeftThreeRunnerFour = SplitThreeRunnerFour % SEC_TO_MIN;
+	String FinalSplitThreeRunnerFour = MinutesLeftThreeRunnerFour + ":" + formatter.format(SecondsLeftThreeRunnerFour);
+	System.out.println();
 			
-			//Table for Runner 4
+	//Table for Runner 4
 			
-				System.out.println("Runner Four Summary: ");
-				System.out.println("SplitOne: " + FinalSplitRunnerFour);
-				System.out.println("SplitTwo: " + FinalSplitTwoRunnerFour);
-				System.out.println("SplitThree: " + FinalSplitThreeRunnerFour);
-				System.out.println("Total 5km run: " + TotalRunnerFour);
-				System.out.println();	
+	System.out.println("Runner Four Summary: ");
+	System.out.println("SplitOne: " + FinalSplitRunnerFour);
+	System.out.println("SplitTwo: " + FinalSplitTwoRunnerFour);
+	System.out.println("SplitThree: " + FinalSplitThreeRunnerFour);
+	System.out.println("Total 5km run: " + TotalRunnerFour);
+	System.out.println();	
 				
-				//Runner Five Mile One
-				System.out.print(" Please enter your first and last name: ");
-				String name5 = keyboard.nextLine();
-				System.out.print(name5 + " Please enter your mile one time (mm:ss.sss)");
-				String MileOneRunnerFive = keyboard.nextLine();
-				int MinutesRunnerFive = Integer.parseInt(MileOneRunnerFive.substring(0, MileOneRunnerFive.indexOf(':')));
-				int MinutesToSecondsRunnerFive = MinutesRunnerFive * SEC_TO_MIN;
-				double SecondsRunnerFive = Double.parseDouble(MileOneRunnerFive.substring(MileOneRunnerFive.indexOf(':') +1));
-				double TotalSecondsRunnerFive = SecondsRunnerFive + MinutesToSecondsRunnerFive;
+	//Runner Five Mile One
+	System.out.print(" Please enter your first and last name: ");
+	String name5 = keyboard.nextLine();
+	System.out.print(name5 + " Please enter your mile one time (mm:ss.sss)");
+	String MileOneRunnerFive = keyboard.nextLine();
+	int MinutesRunnerFive = Integer.parseInt(MileOneRunnerFive.substring(0, MileOneRunnerFive.indexOf(':')));
+	int MinutesToSecondsRunnerFive = MinutesRunnerFive * SEC_TO_MIN;
+	double SecondsRunnerFive = Double.parseDouble(MileOneRunnerFive.substring(MileOneRunnerFive.indexOf(':') +1));
+	double TotalSecondsRunnerFive = SecondsRunnerFive + MinutesToSecondsRunnerFive;
 				
-				//Runner Five Mile Two
-				System.out.print(name5 + " Please enter your mile one time (mm:ss.sss)");
-				String MileTwoRunnerFive = keyboard.nextLine();
-				int MinutesTwoRunnerFive = Integer.parseInt(MileTwoRunnerFive.substring(0, MileTwoRunnerFive.indexOf(':')));
-				int MinutesTwoToSecondsRunnerFive = MinutesTwoRunnerFive * SEC_TO_MIN;
-				double SecondsTwoRunnerFive  = Double.parseDouble(MileTwoRunnerFive.substring(MileTwoRunnerFive.indexOf(':') +1));
-				double TotalSecondsTwoRunnerFive = SecondsTwoRunnerFive + MinutesTwoToSecondsRunnerFive;
+	//Runner Five Mile Two
+	System.out.print(name5 + " Please enter your mile one time (mm:ss.sss)");
+	String MileTwoRunnerFive = keyboard.nextLine();
+	int MinutesTwoRunnerFive = Integer.parseInt(MileTwoRunnerFive.substring(0, MileTwoRunnerFive.indexOf(':')));
+	int MinutesTwoToSecondsRunnerFive = MinutesTwoRunnerFive * SEC_TO_MIN;
+	double SecondsTwoRunnerFive  = Double.parseDouble(MileTwoRunnerFive.substring(MileTwoRunnerFive.indexOf(':') +1));
+	double TotalSecondsTwoRunnerFive = SecondsTwoRunnerFive + MinutesTwoToSecondsRunnerFive;
 				
-				//Runner Five Total 5km run
-				System.out.print(name5 + " Please enter your mile one time (mm:ss.sss)");
-				String TotalRunnerFive= keyboard.nextLine();
-				int MinutesThreeRunnerFive = Integer.parseInt(TotalRunnerFive.substring(0, TotalRunnerFive.indexOf(':')));
-				int MinutesThreeToSecondsRunnerFive = MinutesThreeRunnerFive * SEC_TO_MIN;
-				double SecondsThreeRunnerFive  = Double.parseDouble(TotalRunnerFive.substring(TotalRunnerFive.indexOf(':') +1));
-				double TotalSecondsThreeRunnerFive = SecondsThreeRunnerFive + MinutesThreeToSecondsRunnerFive;
+	//Runner Five Total 5km run
+	System.out.print(name5 + " Please enter your mile one time (mm:ss.sss)");
+	String TotalRunnerFive= keyboard.nextLine();
+	int MinutesThreeRunnerFive = Integer.parseInt(TotalRunnerFive.substring(0, TotalRunnerFive.indexOf(':')));
+	int MinutesThreeToSecondsRunnerFive = MinutesThreeRunnerFive * SEC_TO_MIN;
+	double SecondsThreeRunnerFive  = Double.parseDouble(TotalRunnerFive.substring(TotalRunnerFive.indexOf(':') +1));
+	double TotalSecondsThreeRunnerFive = SecondsThreeRunnerFive + MinutesThreeToSecondsRunnerFive;
 				
-				//Finding Split Time
-				double SplitOneRunnerFive = TotalSecondsRunnerFive;
-				int MinutesLeftOneRunnerFive = (int) SplitOneRunnerFive / SEC_TO_MIN;
-				double SecondsLeftOneRunnerFive = SplitOneRunnerFive % SEC_TO_MIN;
-				String FinalSplitRunnerFive = MinutesLeftOneRunnerFive + ":" + formatter.format(SecondsLeftOneRunnerFive);
+	//Finding Split Time
+	double SplitOneRunnerFive = TotalSecondsRunnerFive;
+	int MinutesLeftOneRunnerFive = (int) SplitOneRunnerFive / SEC_TO_MIN;
+	double SecondsLeftOneRunnerFive = SplitOneRunnerFive % SEC_TO_MIN;
+	String FinalSplitRunnerFive = MinutesLeftOneRunnerFive + ":" + formatter.format(SecondsLeftOneRunnerFive);
 				
-				double SplitTwoRunnerFive = TotalSecondsTwoRunnerFive - TotalSecondsRunnerFive;
-				int MinutesLeftTwoRunnerFive= (int) SplitTwoRunnerFive/ SEC_TO_MIN;
-				double SecondsLeftTwoRunnerFive = SplitTwoRunnerFive % SEC_TO_MIN;
-				String FinalSplitTwoRunnerFive = MinutesLeftTwoRunnerFive + ":" + formatter.format(SecondsLeftTwoRunnerFive);
+	double SplitTwoRunnerFive = TotalSecondsTwoRunnerFive - TotalSecondsRunnerFive;
+	int MinutesLeftTwoRunnerFive= (int) SplitTwoRunnerFive/ SEC_TO_MIN;
+	double SecondsLeftTwoRunnerFive = SplitTwoRunnerFive % SEC_TO_MIN;
+	String FinalSplitTwoRunnerFive = MinutesLeftTwoRunnerFive + ":" + formatter.format(SecondsLeftTwoRunnerFive);
 				
-				double SplitThreeRunnerFive = TotalSecondsThreeRunnerFive - TotalSecondsTwoRunnerFive;
-				int MinutesLeftThreeRunnerFive = (int) SplitThreeRunnerFive / SEC_TO_MIN;
-				double SecondsLeftThreeRunnerFive = SplitThreeRunnerFive % SEC_TO_MIN;
-				String FinalSplitThreeRunnerFive = MinutesLeftThreeRunnerFive + ":" + formatter.format(SecondsLeftThreeRunnerFive);
-				System.out.println();
+	double SplitThreeRunnerFive = TotalSecondsThreeRunnerFive - TotalSecondsTwoRunnerFive;
+	int MinutesLeftThreeRunnerFive = (int) SplitThreeRunnerFive / SEC_TO_MIN;
+	double SecondsLeftThreeRunnerFive = SplitThreeRunnerFive % SEC_TO_MIN;
+	String FinalSplitThreeRunnerFive = MinutesLeftThreeRunnerFive + ":" + formatter.format(SecondsLeftThreeRunnerFive);
+	System.out.println();
 				
-				//Table for Runner 5
+	//Table for Runner 5
 				
-					System.out.println("Runner Five Summary: ");
-					System.out.println("SplitOne: " + FinalSplitRunnerFive);
-					System.out.println("SplitTwo: " + FinalSplitTwoRunnerFive);
-					System.out.println("SplitThree: " + FinalSplitThreeRunnerFive);
-					System.out.println("Total 5km run: " + TotalRunnerFive);
-					System.out.println();	
-					System.out.println();	
+	System.out.println("Runner Five Summary: ");
+	System.out.println("SplitOne: " + FinalSplitRunnerFive);
+	System.out.println("SplitTwo: " + FinalSplitTwoRunnerFive);
+	System.out.println("SplitThree: " + FinalSplitThreeRunnerFive);
+	System.out.println("Total 5km run: " + TotalRunnerFive);
+	System.out.println();	
+	System.out.println();	
 					
-					//Summary Table 
-					System.out.printf("%-15s%-15s%-15s%-15s%-15s\n", "Name", "Split One", "Split Two", "Split Three", "Split Final");
-					System.out.printf("%-15s%-15s%-15s%-15s%-15s\n", name, FinalSplitRunnerOne, FinalSplitTwoRunnerOne, FinalSplitThreeRunnerOne, TotalRunnerOne);
-					System.out.printf("%-15s%-15s%-15s%-15s%-15s\n", name2, FinalSplitRunnerTwo, FinalSplitTwoRunnerTwo, FinalSplitThreeRunnerTwo, TotalRunnerTwo);
-					System.out.printf("%-15s%-15s%-15s%-15s%-15s\n", name3, FinalSplitRunnerThree, FinalSplitTwoRunnerThree, FinalSplitThreeRunnerThree, TotalRunnerThree);
-					System.out.printf("%-15s%-15s%-15s%-15s%-15s\n", name4, FinalSplitRunnerFour, FinalSplitTwoRunnerFour, FinalSplitThreeRunnerFour, TotalRunnerFour);
-					System.out.printf("%-15s%-15s%-15s%-15s%-15s\n", name5, FinalSplitRunnerFive, FinalSplitTwoRunnerFive, FinalSplitThreeRunnerFive, TotalRunnerFive);
+	//Summary Table 
+	System.out.printf("%-15s%-15s%-15s%-15s%-15s\n", "Name", "Split One", "Split Two", "Split Three", "Split Final");
+	System.out.printf("%-15s%-15s%-15s%-15s%-15s\n", name, FinalSplitRunnerOne, FinalSplitTwoRunnerOne, FinalSplitThreeRunnerOne, TotalRunnerOne);
+	System.out.printf("%-15s%-15s%-15s%-15s%-15s\n", name2, FinalSplitRunnerTwo, FinalSplitTwoRunnerTwo, FinalSplitThreeRunnerTwo, TotalRunnerTwo);
+	System.out.printf("%-15s%-15s%-15s%-15s%-15s\n", name3, FinalSplitRunnerThree, FinalSplitTwoRunnerThree, FinalSplitThreeRunnerThree, TotalRunnerThree);
+	System.out.printf("%-15s%-15s%-15s%-15s%-15s\n", name4, FinalSplitRunnerFour, FinalSplitTwoRunnerFour, FinalSplitThreeRunnerFour, TotalRunnerFour);
+	System.out.printf("%-15s%-15s%-15s%-15s%-15s\n", name5, FinalSplitRunnerFive, FinalSplitTwoRunnerFive, FinalSplitThreeRunnerFive, TotalRunnerFive);
 					
 					
-					keyboard.close();
+	keyboard.close();
+	
 }	
 	}
 
