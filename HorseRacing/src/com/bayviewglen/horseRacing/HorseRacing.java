@@ -30,7 +30,7 @@ public class HorseRacing {
 			displayHorse(horsePlay);
 
 			boolean race = true;
-			int[] bet = new int[playerNames.length];
+			double[] bet = new double[playerNames.length];
 			int[] horseBet = new int[playerNames.length];
 			for (int i = 0; i < horseBet.length; i++) {
 				horseBet[i] = 10;
@@ -84,7 +84,7 @@ public class HorseRacing {
 
 	}
 
-	private static void adjustWallets(String[] horses, String[] playerNames, int[] playerWallets, int[] bet,
+	private static void adjustWallets(String[] horses, String[] playerNames, int[] playerWallets, double[] bet,
 			int[] horseBet) {
 		// adjusts wallets based on player's bet and winnings
 
@@ -95,7 +95,7 @@ public class HorseRacing {
 			if (horseBet[i] == 10) {
 				System.out.println(playerNames[i] + "you did not bet on a horse yet!");
 			} else if (winner == horseBet[i]) {
-				playerWallets[i] = +bet[i];
+				playerWallets[i] += bet[i];
 				System.out.println(playerNames[i] + "your horse won the race!!! NICE");
 			} else {
 				playerWallets[i] -= bet[i];
@@ -175,7 +175,6 @@ public class HorseRacing {
 		System.out.println("--------------------------------------------------------------------");
 		System.out.println();
 		System.out.println("press spacebar to play the next round!");
-		String nextRound = keyboard.nextLine();
 
 	}
 
@@ -245,7 +244,8 @@ public class HorseRacing {
 
 	}
 
-	private static void getBets(Scanner keyboard, String[] playerNames, int[] playerWallets, NumberFormat format, String[] horsePlay, int[] bet, int[] horseBet) {
+	private static void getBets(Scanner keyboard, String[] playerNames, int[] playerWallets, String[] horsePlay,
+			double[] bet, int[] horseBet) {
 		// gets bets from players playing
 		int racePlayers = horsePlay.length;
 		boolean betting = true;
@@ -254,19 +254,19 @@ public class HorseRacing {
 
 			playerIndex = choosePlayer(keyboard, playerNames, playerIndex);
 			if (playerWallets[playerIndex] != 0) {
-				getPlayerBet(keyboard, playerNames, playerWallets, format, bet, playerIndex, horseBet, racePlayers);
-				
-			}else{
+				getPlayerBet(keyboard, playerNames, playerWallets, bet, playerIndex, horseBet, racePlayers);
+
+			} else {
 				System.out.println("You dont have any more money to bet with!!!");
-				
+
 			}
 			System.out.println("Would another player want to place a bet?? (Yes or No)");
 			String betting$ = keyboard.nextLine();
-			
+
 			while (!betting$.equalsIgnoreCase("yes") && !betting$.equalsIgnoreCase("no")) {
 				System.out.println("Please answer Yes or No, would another player want to place a bet");
 				betting$ = keyboard.nextLine();
-					}
+			}
 			if (betting$.equalsIgnoreCase("no")) {
 				betting = false;
 			}
@@ -275,29 +275,64 @@ public class HorseRacing {
 
 	}
 
-	private static void getPlayerBet(Scanner keyboard, String[] playerNames, int[] playerWallets, NumberFormat format, int[] bet, int playerIndex, int[] horseBet, int racePlayers) {
+	private static void getPlayerBet(Scanner keyboard, String[] playerNames, int[] playerWallets, double[] bet,
+			int playerIndex, int[] horseBet, int racePlayers) {
 		// get player's horse and bet
-		getPlayerMoneybet(keyboard, playerNames, playerWallets, format, bet, playerIndex);
+		getPlayerMoneybet(keyboard, playerNames, playerWallets, bet, playerIndex);
 		getPlayerHorseBet(keyboard, playerNames, playerIndex, horseBet, racePlayers);
 	}
 
 	private static void getPlayerHorseBet(Scanner keyboard, String[] playerNames, int playerIndex, int[] horseBet,
 			int racePlayers) {
-		
-		
+		// gets horse that the player wants to bet on
+		while (horseBet[playerIndex] < 1 || horseBet[playerIndex] > racePlayers) {
+			System.out.print(playerNames[playerIndex] + "please enter the number of the horse you want to bet on: ");
+			String readHorse = keyboard.nextLine();
+
+			try {
+				horseBet[playerIndex] = Integer.valueOf(readHorse) - 1;
+			} catch (NumberFormatException e) {
+				System.out.println("Please enter a number!!");
+				horseBet[playerIndex] = -1;
+			}
+		}
 	}
 
-	private static void getPlayerMoneybet(Scanner keyboard, String[] playerNames, int[] playerWallets, NumberFormat format, int[] bet, int playerIndex) {
+	private static void getPlayerMoneybet(Scanner keyboard, String[] playerNames, int[] playerWallets, double[] bet,
+			int playerIndex) {
 		while (bet[playerIndex] < 1 || bet[playerIndex] > playerWallets[playerIndex]) {
-			System.out.print(playerNames[playerIndex] + ", you have " + format.format(playerWallets[playerIndex]) + " in your wallet left, please enter your betting amount: ");
+			System.out.print(playerNames[playerIndex] + ", you have " + (playerWallets[playerIndex])
+					+ " in your wallet left, please enter your betting amount: ");
 			String readBet = keyboard.nextLine();
+
+			try {
+				bet[playerIndex] = Double.valueOf(readBet);
+			} catch (NumberFormatException e) {
+				System.out.println("Please enter a number!!");
+				bet[playerIndex] = -1;
+
+			}
 		}
-		
+
 	}
 
 	private static int choosePlayer(Scanner keyboard, String[] playerNames, int playerIndex) {
-		// TODO Auto-generated method stub
-		return 0;
+		// chooses which player is betting
+		int num = 0;
+		while (num > playerNames.length || num < 1) {
+			System.out.println("please enter the number coresponding to your name: ");
+			String name = keyboard.nextLine();
+			
+			try { 
+				num = Integer.valueOf(name);
+			} catch (NumberFormatException e) {
+				System.out.println(" Please enter a number!!");
+				num = -1;
+			}
+		
+		}
+		playerIndex = num -1;
+		return playerIndex;
 	}
 
 	private static void playerNameGraph(String[] playerInfo, String[] playerNames, int[] playerWallets) {
